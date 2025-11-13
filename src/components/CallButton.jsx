@@ -14,7 +14,7 @@ export default function CallButton({ buyerId, sellerId }) {
 
             // `http://localhost:4000/token?room=${roomName}&identity=${buyerId}&name=Sayan`
             const res = await axios.get(
-                `https://live-kit-iota.vercel.app/token?room=${roomName}&identity=${buyerId}&name=Sayan`
+                `https://live-kit-iota.vercel.app/token?room=${roomName}&identity=${Date.now()}&name=Sayan`
             );
 
             const { token, livekitUrl, room } = res.data;
