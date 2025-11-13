@@ -36,9 +36,9 @@ export default function CallButton({ buyerId, sellerId }) {
     return (
         <button
             onClick={handleStartCall}
-            className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold shadow-md transition"
+            className="px-4 py-2 bg-green-600 mx-auto w-[200px]  hover:bg-green-700 text-white rounded-lg font-semibold shadow-md transition"
         >
-            📞 Call Seller
+            Call
         </button>
     );
 }

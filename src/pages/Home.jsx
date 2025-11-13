@@ -3,7 +3,9 @@ import CallButton from '../components/CallButton'
 
 const Home = () => {
     return (
-        <CallButton buyerId="sayan" sellerId="jatin" />
+        <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+            <CallButton buyerId="sayan" sellerId="jatin" />
+        </div>
     )
 }
 
