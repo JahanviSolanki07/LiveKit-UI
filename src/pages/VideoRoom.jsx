@@ -6,7 +6,7 @@ import {
     useTracks,
     RoomContext,
 } from "@livekit/components-react";
-import { Room, Track } from "livekit-client";
+import { createLocalAudioTrack, createLocalVideoTrack, Room, Track } from "livekit-client";
 import "@livekit/components-styles";
 import { useState, useEffect } from "react";
 import { MdCallEnd } from "react-icons/md";
@@ -34,14 +34,18 @@ export default function VideoRoom() {
         const connectRoom = async () => {
             try {
                 if (mounted) {
+                    const audioTrack = await createLocalAudioTrack();
+                    const videoTrack = await createLocalVideoTrack();
+
                     await room.connect(serverUrl, token);
-                    await room.localParticipant.setCameraEnabled(true);
-                    await room.localParticipant.setMicrophoneEnabled(true);
+                    await room.localParticipant.publishTrack(audioTrack);
+                    await room.localParticipant.publishTrack(videoTrack);
                 }
             } catch (err) {
                 console.error("❌ LiveKit connection failed:", err);
             }
         };
+
 
         connectRoom();
 
