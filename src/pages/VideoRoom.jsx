@@ -34,9 +34,6 @@ export default function VideoRoom() {
         const connectRoom = async () => {
             try {
                 if (mounted) {
-                    const audioTrack = await createLocalAudioTrack();
-                    const videoTrack = await createLocalVideoTrack();
-
                     await room.connect(serverUrl, token);
                     setTimeout(async () => {
                         await room.localParticipant.setMicrophoneEnabled(true);
