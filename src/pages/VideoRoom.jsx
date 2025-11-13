@@ -73,7 +73,7 @@ export default function VideoRoom() {
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-neutral-900 text-white">
       {!joined ? (
         <div className="text-center space-y-6">
-          <h1 className="text-2xl font-semibold">Ready to Join the Call?</h1>
+          <h1 className="text-2xl font-semibold">Ready to Join the Call??</h1>
           <button
             onClick={handleJoin}
             className="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition"
